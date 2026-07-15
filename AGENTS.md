@@ -15,7 +15,35 @@ Monorepo managed with pnpm workspaces + Turborepo.
 - `apps/frontend` keeps a minimal ESLint config (`eslint-config-next`) only for the Next-specific rules Biome doesn't cover (Core Web Vitals, etc.). `apps/backend` has no ESLint — Biome covers linting there too.
 - Root scripts (Turbo-orchestrated): `pnpm build`, `pnpm dev`, `pnpm lint`, `pnpm format`, `pnpm check-types`, `pnpm test`, `pnpm check`.
 
-# Quality gate (must pass 0 errors before completing any task)
+## Skills
+
+Available under `.claude/skills/`. Invoke the matching skill before writing or reviewing code in these situations — don't rely on training data for framework/library specifics, they go stale fast.
+
+**Backend (`apps/backend`, NestJS)**
+
+- `nestjs-best-practices` — modules, dependency injection, guards/interceptors, security, performance.
+- `nodejs-best-practices` — framework-agnostic Node.js decisions: async patterns, security, architecture.
+- `nodejs-backend-patterns` — generic API/middleware/auth/DB-integration patterns when NestJS conventions don't cover the case.
+
+**Frontend (`apps/frontend`, Next.js 16 + React 19)**
+
+- `next-best-practices` — file conventions, RSC boundaries, data fetching, async APIs, metadata, route handlers.
+- `next-cache-components` — PPR, `use cache`, `cacheLife`/`cacheTag`.
+- `next-upgrade` — only when bumping the Next.js version.
+- `react-best-practices` — React/Next rendering and performance optimization.
+- `composition-patterns` — compound components, render props, context providers, avoiding boolean-prop proliferation.
+- `tailwind-css-patterns` — utility-first styling, responsive layouts.
+- `accessibility` — WCAG 2.2 audits, keyboard nav, screen-reader support.
+- `seo` — meta tags, structured data, sitemap optimization.
+- `frontend-design` — new UI surfaces that need a deliberate visual-design pass.
+
+**Shared / cross-cutting**
+
+- `zod` — any `z.object` schema, especially in `packages/types` (see Structure above).
+- `typescript-advanced-types` — generics, conditional/mapped types, template literals.
+- `turborepo` — `turbo.json`, task pipelines, caching, `--filter`/`--affected`.
+
+## Quality gate (must pass 0 errors before completing any task)
 
 Before considering any task done, run from the repo root, in order:
 

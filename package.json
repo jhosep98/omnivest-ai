@@ -1,5 +1,6 @@
 {
   "name": "omnivest-ai",
+  "description": "OmniVest AI is a personal finance ecosystem and trading journal designed to consolidate your portfolio, track derivatives trading, and leverage AI automation for smart financial insights.",
   "private": true,
   "scripts": {
     "build": "turbo run build",
